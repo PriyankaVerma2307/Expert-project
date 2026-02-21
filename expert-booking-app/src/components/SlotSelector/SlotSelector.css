@@ -1,0 +1,65 @@
+/* ---------- SLOT SELECTOR ---------- */
+
+.slot-selector {
+  margin-top: 20px;
+}
+
+.section-title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.date-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.date-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e5e7eb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.date-btn:hover {
+  background-color: #d1d5db;
+}
+
+.active-date {
+  background-color: #22c55e;
+  color: white;
+}
+
+.slot-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.slot-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slot-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.active-slot {
+  background-color: #2563eb;
+  color: white;
+}
+
+.booked-slot {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

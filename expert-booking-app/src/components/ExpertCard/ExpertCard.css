@@ -1,0 +1,71 @@
+.expert-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  width: 280px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* Name */
+.expert-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+/* Category Badge */
+.category {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4338ca;
+  background: #eef2ff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  width: fit-content;
+}
+
+/* Experience */
+.experience {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Rating */
+.rating {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+/* Button */
+.view-btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}

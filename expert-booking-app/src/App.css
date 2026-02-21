@@ -1,0 +1,208 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f5f7fb;
+  color: #333;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: #1e293b;
+  color: white;
+}
+
+.logo {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ---------------- PAGE CONTAINER ---------------- */
+
+.page-container {
+  padding: 40px 60px;
+}
+
+/* ---------------- SEARCH & FILTER ---------------- */
+
+.filter-bar {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.input-field,
+.select-field {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+/* ---------------- EXPERT CARD ---------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.expert-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.expert-card:hover {
+  transform: translateY(-5px);
+}
+
+.expert-card h3 {
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #10b981;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------------- SLOT SELECTOR ---------------- */
+
+.date-container,
+.slot-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.date-btn,
+.slot-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #e2e8f0;
+  transition: 0.2s;
+}
+
+.date-btn.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.slot-btn.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.slot-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.primary-btn {
+  padding: 10px 20px;
+  background-color: #6366f1;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: #4f46e5;
+}
+
+.primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------------- FORM ---------------- */
+
+.form-container {
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.success-message {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+}
+
+/* ---------------- TABLE ---------------- */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: white;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-confirmed {
+  color: green;
+  font-weight: bold;
+}
+
+.status-completed {
+  color: blue;
+  font-weight: bold;
+}

@@ -1,0 +1,119 @@
+/* ===== Import Modern Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+
+.home-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee 40%, #dfe9f3);
+  font-family: 'Manrope', sans-serif;
+  padding-bottom: 80px;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+  padding: 140px 20px 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #111, #444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 45px auto;
+  line-height: 1.7;
+}
+
+/* ===== PREMIUM BUTTON ===== */
+.primary-btn {
+  padding: 12px 28px;   /* balanced padding */
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #111, #333);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+/* ===== BUTTON ===== */
+.primary-btn {
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  max-width: 1200px;
+  margin: 80px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  padding: 0 20px;
+}
+
+/* ===== FEATURE CARD ===== */
+.feature-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}

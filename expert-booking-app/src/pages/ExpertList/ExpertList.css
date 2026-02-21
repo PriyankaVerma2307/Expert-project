@@ -1,0 +1,203 @@
+/* ===== PAGE WRAPPER ===== */
+.expert-list-page {
+  min-height: 100vh;
+  padding: 140px 20px 60px 20px;   /* header space */
+  background: linear-gradient(135deg, #fdfbfb, #ebedee 40%, #dfe9f3);
+  font-family: 'Manrope', sans-serif;
+}
+
+
+/* ===== FILTER WRAPPER ===== */
+.filter-wrapper {
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===== SEARCH CENTERED ===== */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== CATEGORY TABS CENTERED ===== */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.category-btn.active {
+  background: #111;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-btn:hover {
+  transform: translateY(-2px);
+}
+/* ===== PAGE TITLE ===== */
+.page-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #111;
+  letter-spacing: -1px;
+}
+
+/* ===== FILTER SECTION ===== */
+.filter-section {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== SEARCH INPUT ===== */
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== SELECT ===== */
+.filter-select {
+  padding: 14px 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== CARD GRID ===== */
+.card-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+  justify-content: center;   /* 🔥 ye last row ko center karega */
+  gap: 35px;
+}
+
+/* ===== LOADING / ERROR ===== */
+.loading-container,
+.error-container {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+/* ===== NO DATA ===== */
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 40px;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ===== PAGE BUTTON ===== */
+.page-btn {
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+
+  background: #111;
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== PAGE INFO ===== */
+.page-info {
+  font-weight: 600;
+  color: #111;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 32px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-input,
+  .filter-select {
+    width: 100%;
+  }
+}
