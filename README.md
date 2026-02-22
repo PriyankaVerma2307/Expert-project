@@ -34,20 +34,24 @@ This app allows users to view expert profiles, select available slots, book sess
 
 ....bash
 git clone https://github.com/yourusername/expert-booking-app.git
+
 cd expert-booking-app
 
 2.Install backend dependencies:
  ....bash 
  cd src/backend
+ 
  npm install
 
 3.Install frontend dependencies:
  ...bash 
  cd ..
+ 
  npm install
 
 4.Create .env file in backend:
    MONGO_URI=<your_mongodb_connection_string>
+   
    PORT=5000
 
 
@@ -55,15 +59,21 @@ cd expert-booking-app
 ## Run Application
 
 Backend (Express + Node.js):
+
 cd src/backend
+
 npm run dev
 
 Frontend :
+
 ...expert-booking-app
+
 npm start
 
 ## Folder Structure
+
 src/
+
 ├── backend/
 │   ├── models/          # MongoDB Schemas
 │   ├── routes/          # API routes (experts, bookings)
