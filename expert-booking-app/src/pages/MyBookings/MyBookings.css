@@ -1,4 +1,4 @@
-/* Container */
+
 .my-bookings-container {
   padding: 20px;
   padding-top: 100px;
@@ -7,14 +7,14 @@
   min-height: 100vh;
 }
 
-/* Heading */
+
 .my-bookings-container h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Search Form */
+
 .bookings-search-form {
   margin-bottom: 20px;
   display: flex;
@@ -52,13 +52,13 @@
   cursor: not-allowed;
 }
 
-/* Error Message */
+
 .bookings-error {
   color: red;
   margin-bottom: 10px;
 }
 
-/* Table */
+
 .bookings-table {
   width: 100%;
   border-collapse: collapse;
@@ -82,13 +82,13 @@
   color: #555;
 }
 
-/* Row hover */
+
 .bookings-table tbody tr:hover {
   background: #f1f7ff;
   transition: background 0.3s;
 }
 
-/* Status badges */
+
 .status-badge {
   padding: 6px 14px;
   border-radius: 20px;
@@ -98,7 +98,7 @@
   text-align: center;
 }
 
-/* Status colors */
+
 .status-confirmed {
   background: #d4edda;
   color: #155724;

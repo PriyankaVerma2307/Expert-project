@@ -1,11 +1,9 @@
-// src/backend/routes/bookingRoutes.js
+
 const express = require("express");
 const router = express.Router();
 const Booking = require("../models/Booking");
 
-// ===============================
-// Create a new booking
-// ===============================
+
 router.post("/", async (req, res) => {
   try {
     const { expertId, date, slot, name, email, phone } = req.body;
@@ -30,9 +28,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// ===============================
-// Get all bookings (optional query by expertId & date)
-// ===============================
+
 router.get("/", async (req, res) => {
   try {
     const { expertId, date } = req.query;
@@ -49,9 +45,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ===============================
-// Get single booking by ID
-// ===============================
+
 router.get("/:id", async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.id);
@@ -63,9 +57,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// ===============================
-// Delete a booking by ID
-// ===============================
+
 router.delete("/:id", async (req, res) => {
   try {
     const booking = await Booking.findByIdAndDelete(req.params.id);

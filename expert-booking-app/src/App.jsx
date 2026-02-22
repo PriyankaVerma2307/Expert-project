@@ -9,7 +9,7 @@ import Home from "./pages/Home/Home";
 const HeaderWrapper = () => {
   const location = useLocation();
 
-  // Hide header only on Home page
+  
   if (location.pathname === "/") {
     return null;
   }
@@ -20,11 +20,11 @@ const HeaderWrapper = () => {
 function App() {
   return (
     <BrowserRouter>
-      <HeaderWrapper />   {/* ✅ Header control yaha render karo */}
+      <HeaderWrapper />   
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/experts" element={<ExpertList />} />   {/* ✅ ExpertList route add */}
+        <Route path="/experts" element={<ExpertList />} />   
         <Route path="/experts/:id" element={<ExpertDetail />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/my-bookings" element={<MyBookings />} />

@@ -27,7 +27,7 @@ const bookingSchema = new mongoose.Schema({
     required: false,
   },
   notes: {
-    type: String, // optional
+    type: String, 
     required: false,
   },
   createdAt: {

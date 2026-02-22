@@ -1,4 +1,4 @@
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
   color: #333;
 }
 
-/* ---------------- HEADER ---------------- */
+
 
 .header {
   display: flex;
@@ -41,13 +41,13 @@ body {
   background-color: #2563eb;
 }
 
-/* ---------------- PAGE CONTAINER ---------------- */
+
 
 .page-container {
   padding: 40px 60px;
 }
 
-/* ---------------- SEARCH & FILTER ---------------- */
+
 
 .filter-bar {
   display: flex;
@@ -63,7 +63,7 @@ body {
   width: 250px;
 }
 
-/* ---------------- EXPERT CARD ---------------- */
+
 
 .card-grid {
   display: grid;
@@ -98,7 +98,7 @@ body {
   cursor: pointer;
 }
 
-/* ---------------- SLOT SELECTOR ---------------- */
+
 
 .date-container,
 .slot-container {
@@ -133,7 +133,7 @@ body {
   cursor: not-allowed;
 }
 
-/* ---------------- BUTTONS ---------------- */
+
 
 .primary-btn {
   padding: 10px 20px;
@@ -154,7 +154,7 @@ body {
   cursor: not-allowed;
 }
 
-/* ---------------- FORM ---------------- */
+
 
 .form-container {
   max-width: 500px;
@@ -176,7 +176,7 @@ body {
   font-weight: bold;
 }
 
-/* ---------------- TABLE ---------------- */
+
 
 .table {
   width: 100%;

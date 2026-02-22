@@ -1,13 +1,13 @@
-/* ===== PAGE WRAPPER ===== */
+
 .expert-list-page {
   min-height: 100vh;
-  padding: 140px 20px 60px 20px;   /* header space */
+  padding: 140px 20px 60px 20px;   
   background: linear-gradient(135deg, #fdfbfb, #ebedee 40%, #dfe9f3);
   font-family: 'Manrope', sans-serif;
 }
 
 
-/* ===== FILTER WRAPPER ===== */
+
 .filter-wrapper {
   max-width: 1000px;
   margin: 0 auto 50px auto;
@@ -16,7 +16,7 @@
   gap: 30px;
 }
 
-/* ===== SEARCH CENTERED ===== */
+
 .search-wrapper {
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== CATEGORY TABS CENTERED ===== */
+
 .category-tabs {
   display: flex;
   justify-content: center;
@@ -68,7 +68,8 @@
 .category-btn:hover {
   transform: translateY(-2px);
 }
-/* ===== PAGE TITLE ===== */
+
+
 .page-title {
   text-align: center;
   font-size: 42px;
@@ -78,7 +79,7 @@
   letter-spacing: -1px;
 }
 
-/* ===== FILTER SECTION ===== */
+
 .filter-section {
   max-width: 900px;
   margin: 0 auto 50px auto;
@@ -88,7 +89,7 @@
   flex-wrap: wrap;
 }
 
-/* ===== SEARCH INPUT ===== */
+
 .search-input {
   flex: 1;
   min-width: 250px;
@@ -103,7 +104,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== SELECT ===== */
+
 .filter-select {
   padding: 14px 20px;
   border-radius: 50px;
@@ -117,7 +118,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== CARD GRID ===== */
+
 .card-grid {
   max-width: 1100px;
   margin: 0 auto;
@@ -129,7 +130,7 @@
   gap: 35px;
 }
 
-/* ===== LOADING / ERROR ===== */
+
 .loading-container,
 .error-container {
   text-align: center;
@@ -137,7 +138,7 @@
   font-size: 16px;
 }
 
-/* ===== NO DATA ===== */
+
 .no-data {
   text-align: center;
   font-size: 18px;
@@ -145,7 +146,7 @@
   margin-top: 40px;
 }
 
-/* ===== PAGINATION ===== */
+
 .pagination {
   margin-top: 60px;
   display: flex;
@@ -154,7 +155,7 @@
   gap: 25px;
 }
 
-/* ===== PAGE BUTTON ===== */
+
 .page-btn {
   padding: 10px 24px;
   border-radius: 30px;
@@ -179,13 +180,13 @@
   cursor: not-allowed;
 }
 
-/* ===== PAGE INFO ===== */
+
 .page-info {
   font-weight: 600;
   color: #111;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   .page-title {
     font-size: 32px;

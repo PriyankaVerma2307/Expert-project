@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
 
-/* ================= PAGE BACKGROUND ================= */
+
 .expert-detail-page {
   min-height: 100vh;
-  padding: 110px 20px 60px; /* header ke niche safe spacing */
+  padding: 110px 20px 60px; 
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -11,10 +11,10 @@
   font-family: 'Manrope', sans-serif;
 }
 
-/* ================= MAIN CARD ================= */
+
 .expert-detail-container {
   display: flex;
-  flex-direction: row; /* horizontal layout */
+  flex-direction: row; 
   justify-content: space-between;
   gap: 40px;
   width: 100%;
@@ -32,9 +32,9 @@
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
 }
 
-/* ================= LEFT (OPTIONAL IMAGE) ================= */
+
 .expert-detail-left {
-  flex: 0 0 300px; /* fixed width */
+  flex: 0 0 300px; 
 }
 .expert-detail-left img {
   width: 100%;
@@ -42,7 +42,7 @@
   object-fit: cover;
 }
 
-/* ================= RIGHT (INFO) ================= */
+
 .expert-detail-right {
   flex: 1;
   display: flex;
@@ -50,7 +50,7 @@
   gap: 25px;
 }
 
-/* ================= TITLE ================= */
+
 .expert-detail-title {
   font-size: 34px;
   font-weight: 800;
@@ -59,7 +59,7 @@
   letter-spacing: 0.5px;
 }
 
-/* ================= META INFO ================= */
+
 .expert-meta {
   display: flex;
   gap: 20px;
@@ -84,7 +84,7 @@
   color: #475569;
 }
 
-/* ================= SECTION BOX ================= */
+
 .expert-section {
   padding: 25px;
   border-radius: 18px;
@@ -112,7 +112,7 @@
   margin: 0;
 }
 
-/* ================= BOOK BUTTON ================= */
+
 .expert-detail-container .primary-btn {
   width: 100%;
   padding: 17px;
@@ -139,12 +139,12 @@
   box-shadow: none;
 }
 
-/* ================= SLOT SELECTOR ================= */
+
 .slot-selector-container {
   margin-top: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media screen and (max-width: 900px) {
   .expert-detail-container {
     flex-direction: column;

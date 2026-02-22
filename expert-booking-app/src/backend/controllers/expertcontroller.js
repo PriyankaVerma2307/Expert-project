@@ -1,4 +1,3 @@
-// expertcontroller.js (ESM)
 import Expert from "../models/Expert.js";
 import Booking from "../models/Booking.js";
 

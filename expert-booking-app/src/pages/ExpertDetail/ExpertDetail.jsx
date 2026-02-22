@@ -61,12 +61,9 @@ function ExpertDetail() {
     <div className="expert-detail-page">
   <div className="expert-detail-container">
 
-    {/* Left image (optional) */}
-    {/* <div className="expert-detail-left">
-      <img src={expert.photo} alt={expert.name} />
-    </div> */}
+    
 
-    {/* Right info */}
+    
     <div className="expert-detail-right">
       <h2 className="expert-detail-title">{expert.name}</h2>
       <div className="expert-meta">

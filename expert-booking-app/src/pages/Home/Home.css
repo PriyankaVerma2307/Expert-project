@@ -1,4 +1,4 @@
-/* ===== Import Modern Font ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
 
 .home-wrapper {
@@ -8,7 +8,7 @@
   padding-bottom: 80px;
 }
 
-/* ===== HERO SECTION ===== */
+
 
 .hero {
   padding: 140px 20px 80px 20px;
@@ -33,9 +33,9 @@
   line-height: 1.7;
 }
 
-/* ===== PREMIUM BUTTON ===== */
+
 .primary-btn {
-  padding: 12px 28px;   /* balanced padding */
+  padding: 12px 28px;   
   font-size: 16px;
   font-weight: 600;
   background: linear-gradient(135deg, #111, #333);
@@ -51,7 +51,8 @@
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
-/* ===== BUTTON ===== */
+
+
 .primary-btn {
   padding: 14px 36px;
   font-size: 16px;
@@ -69,7 +70,7 @@
   transform: translateY(-3px);
 }
 
-/* ===== FEATURES SECTION ===== */
+
 .features {
   max-width: 1200px;
   margin: 80px auto 0 auto;
@@ -79,7 +80,7 @@
   padding: 0 20px;
 }
 
-/* ===== FEATURE CARD ===== */
+
 .feature-card {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(15px);
@@ -107,7 +108,6 @@
   line-height: 1.6;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 36px;

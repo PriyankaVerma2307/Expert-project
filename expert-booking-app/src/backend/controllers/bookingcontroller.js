@@ -1,10 +1,6 @@
 const Booking = require("../models/Booking");
 
-/*
-====================================
-1️⃣ Create Booking (with double booking protection)
-====================================
-*/
+
 exports.createBooking = async (req, res) => {
   try {
     const { expertId, date, slot } = req.body;
@@ -50,14 +46,7 @@ exports.createBooking = async (req, res) => {
   }
 };
 
-/*
-====================================
-2️⃣ Get Booked Slots by Expert & Date
-====================================
-Query Example:
-GET /api/bookings?expertId=123&date=2026-02-20
-====================================
-*/
+
 exports.getBookedSlots = async (req, res) => {
   try {
     const { expertId, date } = req.query;

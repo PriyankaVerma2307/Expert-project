@@ -83,7 +83,7 @@ function ExpertList() {
     <div className="expert-list-page">
       <h2 className="page-title">Find Your Expert</h2>
 
-      {/* ===== FILTER SECTION ===== */}
+      
       <div className="filter-wrapper">
         <div className="search-wrapper">
           <input
