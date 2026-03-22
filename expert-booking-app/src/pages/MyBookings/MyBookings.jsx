@@ -27,7 +27,7 @@ function MyBookings() {
 
     try {
       const res = await fetch(
-        `${API}/api/bookings?userEmail=${encodeURIComponent(email)}`
+        `${API}/api/bookings?email=${encodeURIComponent(email)}`
       );
 
       const data = await res.json();
