@@ -12,12 +12,12 @@ function ExpertDetail() {
   const [selectedSlot, setSelectedSlot] = useState("");
   const [loading, setLoading] = useState(true);
   
-
+ const API = import.meta.env.VITE_API_URL;
   // 🔹 Fetch Expert Details
   useEffect(() => {
     const fetchExpert = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/experts/${id}`);
+        const res = await fetch(`${API}/api/experts/${id}`);
         const data = await res.json();
         setExpert(data);
       } catch (error) {

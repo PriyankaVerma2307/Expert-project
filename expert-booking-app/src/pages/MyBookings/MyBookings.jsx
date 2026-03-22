@@ -22,10 +22,12 @@ function MyBookings() {
     setLoading(true);
     setError("");
     setSearched(true);
+   
+    const API = import.meta.env.VITE_API_URL;
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/bookings?userEmail=${encodeURIComponent(email)}`
+        `${API}/api/bookings?userEmail=${encodeURIComponent(email)}`
       );
 
       const data = await res.json();

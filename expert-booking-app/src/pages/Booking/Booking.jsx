@@ -42,8 +42,10 @@ function Booking() {
     setLoading(true);
     setError("");
 
+    const API = import.meta.env.VITE_API_URL;
+
     try {
-      await axios.post("http://localhost:5000/api/bookings", {
+      await axios.post(`${API}/api/bookings`, {
         expertId,
         date,
         slot,

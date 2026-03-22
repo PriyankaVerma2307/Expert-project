@@ -35,8 +35,10 @@ function ExpertList() {
       if (currentCategory !== "All")
         queryParams.append("category", currentCategory);
 
+      const API = import.meta.env.VITE_API_URL;
+
       const res = await fetch(
-        `http://localhost:5000/api/experts?${queryParams}`
+        `${API}/api/experts?${queryParams}`
       );
       const data = await res.json();
 

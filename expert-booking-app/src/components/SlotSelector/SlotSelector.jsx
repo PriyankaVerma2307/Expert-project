@@ -8,6 +8,8 @@ const SlotSelector = ({ onSelect }) => {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const API = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchBookedSlots = async () => {
       const slotsData = {};
@@ -20,7 +22,7 @@ const SlotSelector = ({ onSelect }) => {
 
         try {
           const res = await axios.get(
-            `http://localhost:5000/api/bookings?expertId=${id}&date=${dateStr}`
+            `${API}/api/bookings?expertId=${id}&date=${dateStr}`
           );
           slotsData[dateStr] = res.data.map((b) => b.slot);
         } catch {
