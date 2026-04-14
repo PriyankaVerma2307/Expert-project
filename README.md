@@ -123,15 +123,15 @@ npm start
 
 ### 🏠 Expert Home Page
 
-![Expert Home](./src/frontend/public/expert-home.png)
+![Expert Home](./frontend/public/expert-home.png)
 
 ### 📋 Expert List Page
 
-![Expert List](./src/frontend/public/expert-list.png)
+![Expert List](./frontend/public/expert-list.png)
 
 ### 📅 Booking Page
 
-![Booking](./src/frontend/public/booking.png)
+![Booking](./frontend/public/booking.png)
 
 ---
 
