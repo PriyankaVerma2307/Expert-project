@@ -121,17 +121,7 @@ npm start
 
 ## 📸 Screenshots
 
-### 🏠 Expert Home Page
 
-![Expert Home](./frontend/public/expert-home.png)
-
-### 📋 Expert List Page
-
-![Expert List](./frontend/public/expert-list.png)
-
-### 📅 Booking Page
-
-![Booking](./frontend/public/booking.png)
 
 ---
 
