@@ -1,72 +1,43 @@
-const Booking = require("../models/Booking");
+import Booking from "../models/Booking.js";
 
+export const createBooking = async (req, res) => {
+  const { expertId, date, slot, notes } = req.body;
 
-exports.createBooking = async (req, res) => {
   try {
-    const { expertId, date, slot } = req.body;
-
-    // Basic validation
-    if (!expertId || !date || !slot) {
-      return res.status(400).json({
-        message: "expertId, date and slot are required",
-      });
-    }
-
-    // Check if slot already booked
-    const existingBooking = await Booking.findOne({
-      expertId,
-      date,
-      slot,
-    });
-
+    const existingBooking = await Booking.findOne({ expertId, date, slot });
     if (existingBooking) {
-      return res.status(400).json({
-        message: "This slot is already booked",
-      });
+      return res.status(400).json({ message: "This slot is already booked" });
     }
 
-    // Create booking
-    const booking = new Booking({
+    const booking = await Booking.create({
+      userId: req.user._id,
       expertId,
       date,
       slot,
+      notes,
     });
 
-    await booking.save();
-
-    res.status(201).json({
-      message: "Booking successful",
-      booking,
-    });
+    res.status(201).json(booking);
   } catch (error) {
-    res.status(500).json({
-      message: "Server error",
-      error: error.message,
-    });
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
 
-
-exports.getBookedSlots = async (req, res) => {
+export const getMyBookings = async (req, res) => {
   try {
-    const { expertId, date } = req.query;
-
-    if (!expertId || !date) {
-      return res.status(400).json({
-        message: "expertId and date are required",
-      });
-    }
-
-    const bookings = await Booking.find({
-      expertId,
-      date,
-    });
-
-    res.status(200).json(bookings);
+    const bookings = await Booking.find({ userId: req.user._id }).populate("expertId");
+    res.json(bookings);
   } catch (error) {
-    res.status(500).json({
-      message: "Server error",
-      error: error.message,
-    });
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
+export const getBookedSlots = async (req, res) => {
+  const { expertId, date } = req.query;
+  try {
+    const bookings = await Booking.find({ expertId, date });
+    res.json(bookings);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };

@@ -1,41 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import "./MyBookings.css"; // premium CSS
+import { useNavigate } from "react-router-dom";
+import { FiCalendar, FiClock, FiCheckCircle, FiClock as FiPending, FiAlertCircle, FiSearch } from "react-icons/fi";
+import "./MyBookings.css";
 
 function MyBookings() {
-  const location = useLocation();
-
-  const [email, setEmail] = useState(location.state?.email || "");
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [searched, setSearched] = useState(false);
+  const navigate = useNavigate();
 
-  const fetchBookings = async (e) => {
-    e?.preventDefault();
-
-    if (!email.trim()) {
-      setError("Please enter your email");
-      return;
-    }
-
+  const fetchBookings = async () => {
     setLoading(true);
     setError("");
-    setSearched(true);
-   
+
     const API = import.meta.env.VITE_API_URL;
+    const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch(
-        `${API}/api/bookings?email=${encodeURIComponent(email)}`
-      );
+      const res = await fetch(`${API}/api/bookings/my`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       const data = await res.json();
 
       if (res.ok) {
         const formattedData = Array.isArray(data)
-          ? data.map((b) => ({ ...b, status: b.status || "Confirmed" }))
+          ? data.map((b) => ({
+              ...b,
+              status: b.status || "Confirmed",
+            }))
           : [];
+
         setBookings(formattedData);
       } else {
         setError(data.message || "Failed to fetch bookings");
@@ -51,73 +48,110 @@ function MyBookings() {
   };
 
   useEffect(() => {
-    if (email && !searched) {
-      fetchBookings();
-    }
+    fetchBookings();
   }, []);
 
   const getStatusBadge = (status) => {
     switch (status) {
       case "Confirmed":
-        return { text: "Booking Confirmed ✅", className: "status-badge status-confirmed" };
+        return {
+          text: "Confirmed",
+          icon: <FiCheckCircle />,
+          className: "status-badge status-confirmed",
+        };
       case "Completed":
-        return { text: "Session Completed ✔️", className: "status-badge status-completed" };
+        return {
+          text: "Completed",
+          icon: <FiCheckCircle />,
+          className: "status-badge status-completed",
+        };
       case "Pending":
       default:
-        return { text: "Pending Confirmation ⏳", className: "status-badge status-pending" };
+        return {
+          text: "Pending",
+          icon: <FiPending />,
+          className: "status-badge status-pending",
+        };
     }
+  };
+
+  const getInitial = (name) => {
+    return name ? name.charAt(0).toUpperCase() : "E";
   };
 
   return (
     <div className="my-bookings-container">
-      <h2>My Bookings</h2>
+      <div className="page-header">
+        <div>
+          <h2 className="page-title">My Bookings</h2>
+          <p className="page-subtitle">Manage and track your upcoming expert sessions</p>
+        </div>
+      </div>
 
-      {/* Search Form */}
-      <form onSubmit={fetchBookings} className="bookings-search-form">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="bookings-input"
-        />
-        <button type="submit" disabled={loading} className="bookings-btn">
-          {loading ? "Loading..." : "Search"}
-        </button>
-      </form>
+      {loading && (
+        <div className="loading-container">
+          <div className="spinner"></div>
+          <p>Loading your bookings...</p>
+        </div>
+      )}
 
-      {error && <p className="bookings-error">{error}</p>}
+      {error && (
+        <div className="error-container">
+          <FiAlertCircle size={24} />
+          <p>{error}</p>
+        </div>
+      )}
 
-      {searched && !loading && (
-        bookings.length === 0 ? (
-          <p>No bookings found for this email</p>
-        ) : (
-          <table className="bookings-table">
-            <thead>
-              <tr>
-                <th>Expert ID</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {bookings.map((booking) => {
-                const badge = getStatusBadge(booking.status);
-                return (
-                  <tr key={booking._id}>
-                    <td>{booking.expertId}</td>
-                    <td>{booking.date}</td>
-                    <td>{booking.slot}</td>
-                    <td>
-                      <span className={badge.className}>{badge.text}</span>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )
+      {!loading && !error && bookings.length === 0 && (
+        <div className="empty-state">
+          <FiCalendar className="empty-icon" />
+          <h3 className="empty-title">No Bookings Yet</h3>
+          <p className="empty-desc">
+            You haven't booked any expert sessions yet. Browse our experts and find the right mentor for you.
+          </p>
+          <button className="browse-btn" onClick={() => navigate("/experts")}>
+            <FiSearch /> Browse Experts
+          </button>
+        </div>
+      )}
+
+      {!loading && bookings.length > 0 && (
+        <div className="bookings-grid">
+          {bookings.map((booking) => {
+            const badge = getStatusBadge(booking.status);
+            const expertName = booking.expertId?.name || "Unknown Expert";
+
+            return (
+              <div className="booking-card" key={booking._id}>
+                <div className="booking-header">
+                  <div className="expert-info">
+                    <div className="expert-avatar">
+                      {getInitial(expertName)}
+                    </div>
+                    <div className="expert-details">
+                      <h3 className="expert-name">{expertName}</h3>
+                      <span className="expert-role">Expert Session</span>
+                    </div>
+                  </div>
+                  <span className={badge.className}>
+                    {badge.icon} {badge.text}
+                  </span>
+                </div>
+
+                <div className="booking-details">
+                  <div className="detail-row">
+                    <FiCalendar className="detail-icon" />
+                    <span className="detail-text">{booking.date}</span>
+                  </div>
+                  <div className="detail-row">
+                    <FiClock className="detail-icon" />
+                    <span className="detail-text">{booking.slot}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       )}
     </div>
   );

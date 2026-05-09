@@ -5,12 +5,13 @@ import Booking from "./pages/Booking/Booking";
 import MyBookings from "./pages/MyBookings/MyBookings";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 
 const HeaderWrapper = () => {
   const location = useLocation();
 
-  
-  if (location.pathname === "/") {
+  if (["/", "/login", "/signup"].includes(location.pathname)) {
     return null;
   }
 
@@ -28,6 +29,8 @@ function App() {
         <Route path="/experts/:id" element={<ExpertDetail />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/my-bookings" element={<MyBookings />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );

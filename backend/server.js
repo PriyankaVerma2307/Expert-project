@@ -5,6 +5,10 @@ import dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
 
+import authRoutes from "./routes/authRoutes.js";
+import expertRoutes from "./routes/expertRoutes.js";
+import bookingRoutes from "./routes/bookingRoutes.js";
+
 // Load env variables
 dotenv.config();
 
@@ -24,10 +28,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes (ESM import)
-import expertRoutes from "./routes/expertRoutes.js";
-import bookingRoutes from "./routes/bookingRoutes.js";
-
+// Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/experts", expertRoutes);
 app.use("/api/bookings", bookingRoutes);
 
@@ -38,11 +40,11 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Socket.io connection
 io.on("connection", (socket) => {
-  console.log("User connected");
+  console.log("User connected:", socket.id);
+  socket.on("disconnect", () => console.log("User disconnected"));
 });
 
 const PORT = process.env.PORT || 5000;
-
 server.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
